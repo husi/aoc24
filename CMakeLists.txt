@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.28.3)
+project(AOC2024 VERSION 0.1.0 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED On)
+
+add_executable(day01 day01.cpp)
