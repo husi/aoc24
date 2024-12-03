@@ -60,7 +60,8 @@
         "filesystem": "cpp",
         "cassert": "cpp",
         "ios": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "bitset": "cpp"
     },
     "cmake.debugConfig": {
         "args": [
