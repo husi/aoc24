@@ -58,8 +58,7 @@ int calculate_2(std::string_view input) {
 }
 
 std::optional<std::string> readInput(std::string_view file_name) {
-  if (!std::filesystem::exists(file_name) ||
-      !std::filesystem::is_regular_file(file_name)) {
+  if (!std::filesystem::exists(file_name)) {
     return {};
   }
 

@@ -51,6 +51,28 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "codecvt": "cpp",
+        "ctime": "cpp",
+        "ratio": "cpp",
+        "iomanip": "cpp",
+        "sstream": "cpp",
+        "filesystem": "cpp",
+        "cassert": "cpp",
+        "ios": "cpp",
+        "regex": "cpp"
+    },
+    "cmake.debugConfig": {
+        "args": [
+            "${workspaceFolder}/inputs/input.txt"
+        ]
+    },
+    "launch": {
+
+        "configurations": [],
+        "compounds": [],
+        "args": [
+            "${workspaceFolder}/inputs/input.txt"
+        ]
     }
 }
