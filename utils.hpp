@@ -8,13 +8,14 @@
 #include <strstream>
 
 auto getLines(std::string_view input) {
-  static const std::regex line{R"-(([^\n]+)\n?)-"};
-  auto it = std::regex_iterator<std::string_view::iterator>(input.begin(),
-                                                            input.end(), line);
+  std::istringstream s(input.data());
   std::vector<std::string> result;
-  for (decltype(it) last; it != last; ++it) {
-    result.push_back((*it).str(1));
-  }
+  do {
+    std::string line;
+    std::getline(s, line);
+    result.push_back(line);
+  } while (!s.eof());
+
   return result;
 }
 
