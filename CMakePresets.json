@@ -11,6 +11,9 @@
                 "CMAKE_C_COMPILER": "/usr/bin/gcc",
                 "CMAKE_CXX_COMPILER": "/usr/bin/g++",
                 "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "warnings": {
+                "deprecated": false
             }
         },
         {
@@ -23,6 +26,9 @@
                 "CMAKE_C_COMPILER": "/usr/bin/clang",
                 "CMAKE_CXX_COMPILER": "/usr/bin/clang++",
                 "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "warnings": {
+                "deprecated": false
             }
         }
     ]

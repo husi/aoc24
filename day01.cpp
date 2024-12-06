@@ -1,15 +1,12 @@
 #include <algorithm>
-#include <cassert>
-#include <cstdlib>
-#include <filesystem>
-#include <fstream>
-#include <ios>
 #include <iostream>
 #include <map>
 #include <ranges>
 #include <strstream>
 #include <utility>
 #include <vector>
+
+#include "utils.hpp"
 
 auto getLists(std::string_view input) {
   std::vector<int> l1, l2;
@@ -55,19 +52,6 @@ int calculate_2(std::string_view input) {
       l2, 0, [&m1](int s, auto val) { return s + val * m1[val]; });
 
   return sum;
-}
-
-std::optional<std::string> readInput(std::string_view file_name) {
-  if (!std::filesystem::exists(file_name)) {
-    return {};
-  }
-
-  std::ifstream file_input(file_name.data());
-  if (!file_input.is_open()) {
-    return {};
-  }
-
-  return std::string{std::istreambuf_iterator{file_input}, {}};
 }
 
 int main(int argc, char **argv) {

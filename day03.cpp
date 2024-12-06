@@ -1,9 +1,4 @@
 #include <algorithm>
-#include <cassert>
-#include <cstdlib>
-#include <filesystem>
-#include <fstream>
-#include <ios>
 #include <iostream>
 #include <map>
 #include <ranges>
@@ -11,6 +6,8 @@
 #include <strstream>
 #include <utility>
 #include <vector>
+
+#include "utils.hpp"
 
 int calculate_1(std::string_view input) {
   int result = 0;
@@ -45,20 +42,6 @@ int calculate_2(std::string_view input) {
   }
 
   return result;
-}
-
-std::optional<std::string> readInput(std::string_view file_name) {
-  if (!std::filesystem::exists(file_name) ||
-      !std::filesystem::is_regular_file(file_name)) {
-    return {};
-  }
-
-  std::ifstream file_input(file_name.data());
-  if (!file_input.is_open()) {
-    return {};
-  }
-
-  return std::string{std::istreambuf_iterator{file_input}, {}};
 }
 
 int main(int argc, char **argv) {
