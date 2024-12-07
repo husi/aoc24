@@ -12,36 +12,6 @@
 
 #include "utils.hpp"
 
-struct Bigint {
-  std::vector<unsigned> digits;
-  static const auto BASE = 1000U;
-  Bigint() { digits.resize(1); }
-
-  Bigint& operator+=(unsigned long long other) {
-    size_t index = 0;
-    unsigned remainder = 0;
-
-    while (other > 0) {
-      if (index == digits.size()) {
-        digits.resize(index + 1);
-      }
-      auto cdigit = digits[index] + other % BASE;
-      digits[index++] = cdigit % BASE;
-      other = other / BASE + cdigit / BASE;
-    }
-
-    return *this;
-  }
-};
-
-std::ostream& operator<<(std::ostream& s, const Bigint& other) {
-  for (auto digit : other.digits | std::ranges::views::reverse) {
-    s << digit << std::setw(3) << std::setfill('0');
-  }
-
-  return s;
-}
-
 auto parse(std::string_view input) {
   auto lines = getLines(input);
 
@@ -106,8 +76,8 @@ bool solvable2(unsigned long long target, size_t index,
   return false;
 }
 
-Bigint calculate_1(std::string_view input) {
-  Bigint result;
+auto calculate_1(std::string_view input) {
+  int64_t result = 0;
   for (auto [target, values] : parse(input)) {
     if (solvable(target, values.size() - 1, values)) {
       result += target;
@@ -117,8 +87,8 @@ Bigint calculate_1(std::string_view input) {
   return result;
 }
 
-Bigint calculate_2(std::string_view input) {
-  Bigint result;
+auto calculate_2(std::string_view input) {
+  int64_t result = 0;
   for (auto [target, values] : parse(input)) {
     if (solvable2(target, values.size() - 1, values)) {
       result += target;
