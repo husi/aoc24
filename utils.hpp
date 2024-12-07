@@ -32,6 +32,13 @@ auto splitLine(std::string_view line) {
   return result;
 }
 
+void printLines(std::vector<std::string> lines) {
+  for (auto line : lines) {
+    std::cout << line << std::endl;
+  }
+  std::cout << std::endl;
+}
+
 std::optional<std::string> readInput(std::string_view file_name) {
   if (!std::filesystem::exists(file_name) ||
       !std::filesystem::is_regular_file(file_name)) {

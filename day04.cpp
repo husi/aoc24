@@ -46,13 +46,6 @@ auto rotate45(std::vector<std::string> lines) {
   return result;
 }
 
-void printLines(std::vector<std::string> lines) {
-  for (auto line : lines) {
-    std::cout << line << std::endl;
-  }
-  std::cout << std::endl;
-}
-
 int calculate_1(std::string_view input) {
   int result = 0;
   auto lines = getLines(input);
