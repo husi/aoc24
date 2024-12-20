@@ -61,7 +61,9 @@
         "cassert": "cpp",
         "ios": "cpp",
         "regex": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "list": "cpp",
+        "set": "cpp"
     },
     "cmake.debugConfig": {
         "args": [
